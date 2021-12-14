@@ -28,7 +28,7 @@ int main(int argc, char ** argv) {                       //sprawdzenie czy popra
 	}
 
 	freeMatrix(A);
-	freeMatrix(b);
+	freeMatrix(b);			
 
 	return 0;
 }
