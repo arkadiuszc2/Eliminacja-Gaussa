@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-int main(int argc, char ** argv) {
+int main(int argc, char ** argv) {                       //sprawdzenie czy poprawnie dokonano push na github
 	int res;
 	Matrix * A = readFromFile(argv[1]);
 	Matrix * b = readFromFile(argv[2]);
