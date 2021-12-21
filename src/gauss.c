@@ -1,8 +1,7 @@
 #include "gauss.h"
-#include <stdio.h>   // dla printf
 
 /**
- * Zwraca 0 - elimnacja zakonczona sukcesem
+ * Zwraca 0 - eliminacja zakonczona sukcesem
  * Zwraca 1 - macierz osobliwa - dzielenie przez 0
  */
 int eliminate(Matrix *mat, Matrix *b){  		
@@ -23,10 +22,8 @@ int eliminate(Matrix *mat, Matrix *b){
 			b->data[max] = tr;
 		}			
 		for( int w= k+1; w < n; w++ ) {
-			if((mat->data[k][k]) == 0) {
-				printf("Błąd, dzielenie przez 0\n");
+			if((mat->data[k][k]) == 0) 
 				return 1;
-			}
 			double q = mat->data[w][k] / mat->data[k][k];     
 			for( int i= k; i < n; i++ )
 				mat->data[w][i] -= q * mat->data[k][i];
