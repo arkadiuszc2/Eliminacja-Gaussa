@@ -12,15 +12,15 @@ int eliminate(Matrix *mat, Matrix *b){
 	for( int k= 0; k < n-1; k++ ) {
 		int max = k;				// wybór elementu dominującego w kolumnie i zamiana równań miejscami
 		for ( int w=k+1; w < n; w++)
-			if( mat->data[w][k] > mat->data[mx][k])
-				mx = w;
-		if( mx != k){				// zamiana wierszy jeśli mx nie jest równe k
+			if( mat->data[w][k] > mat->data[max][k])
+				max = w;
+		if( max != k){				// zamiana wierszy jeśli max nie jest równe k
 			double *tmp = mat->data[k];
-			mat->data[k] = mat->data[mx];
-			mat->data[mx] = tmp;
+			mat->data[k] = mat->data[max];
+			mat->data[max] = tmp;
 			double *tr = b->data[k];
-			b->data[k] = b->data[mx];
-			b->data[mx] = tr;
+			b->data[k] = b->data[max];
+			b->data[max] = tr;
 		}			
 		for( int w= k+1; w < n; w++ ) {
 			if((mat->data[k][k]) == 0) {
