@@ -24,13 +24,14 @@ int main(int argc, char ** argv) {                       //sprawdzenie czy popra
 	if (x != NULL) {
 		res = backsubst(x,A,b);
 
-	if (res == 1 )
-		fprintf(stderr,"Błąd! Nieprawidłowy rozmiar macierzy.\n");
-	if (res == 2)
-		fprintf(stderr,"Błąd! Macierz osobliwa - dzielenie przez 0.\n");
+		if (res == 1 )
+			fprintf(stderr,"Błąd! Nieprawidłowy rozmiar macierzy.\n");
+
+		if (res == 2)
+			fprintf(stderr,"Błąd! Macierz osobliwa - dzielenie przez 0.\n");
 
 		printToScreen(x);
-	  freeMatrix(x);
+	 	 freeMatrix(x);
 	} else {
 		fprintf(stderr,"Błąd! Nie mogłem utworzyć wektora wynikowego x.\n");
 	}
