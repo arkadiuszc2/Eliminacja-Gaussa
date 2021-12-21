@@ -18,16 +18,16 @@ int main(int argc, char ** argv) {                       //sprawdzenie czy popra
 
 	res = eliminate(A,b);
 	if (res == 1)
-		fprintf(stderr,"Błąd! Macierz osobliwa - dzielenie przez 0.");
+		fprintf(stderr,"Błąd! Macierz osobliwa - dzielenie przez 0.\n");
 
 	x = createMatrix(b->r, 1);
 	if (x != NULL) {
 		res = backsubst(x,A,b);
 
 	if (res == 1 )
-		fprintf(stderr, "Błąd! Nieprawidłowy rozmiar macierzy.");
+		fprintf(stderr,"Błąd! Nieprawidłowy rozmiar macierzy.\n");
 	if (res == 2)
-		fprintf(stedrr. "Błąd! Macierz osobliwa - dzielenie przez 0.");
+		fprintf(stderr,"Błąd! Macierz osobliwa - dzielenie przez 0.\n");
 
 		printToScreen(x);
 	  freeMatrix(x);
