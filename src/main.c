@@ -32,7 +32,7 @@ int main(int argc, char **argv)
             if (res == 1)
                 fprintf(stderr, "Błąd! Wymiary podanych macierzy są nieprawidłowe!\n");
             else if (res == 2)
-                fpritnf(stderr, "Błąd! Wystąpiło dzielenie przez zero!");
+                fprintf(stderr, "Błąd! Wystąpiło dzielenie przez zero!");
         }
         else
         {
