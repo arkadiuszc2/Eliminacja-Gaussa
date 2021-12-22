@@ -8,12 +8,12 @@
 
 int compare_double(double a,double b)
 {
-    int eps=0.000001;
+    double eps=0.000001;
     double res=a-b;
     if(res<0)   res=res*(-1);
 
-    if(res<eps) return 0;
-    return 1;
+    if(res<eps) return 1;
+    return 0;
 }
 int main(int argc, char **argv)
 { //sprawdzenie czy poprawnie dokonano push na github
@@ -71,6 +71,7 @@ int main(int argc, char **argv)
         Matrix *test_check;
         for (int i = 1; i <= 4; i++)
         {
+            printf("TEST%i:\n",i);
             plik[0] = '\0';
             strcat(plik, argv[3]);
             strcat(plik, "/test");
@@ -124,22 +125,23 @@ int main(int argc, char **argv)
                 }
                 else
                 {
-                    printf("COMPARE\n");
+                    printf("WYNIK PROGRAMU:\n");
                     printToScreen(x);
+                    printf("OCZEKIWANY WYNIK:\n");
                     printToScreen(test_check);
-                    printf("COMPARE\n");
+                    
                     for(int i=0;i<x->r;i++)
                     {
                         if(compare_double(x->data[i][0],test_check->data[i][0])==0)
                         {
-                            fprintf(stderr,"Błąd! Wynik jest nieprawidlowy!\n");
+                            fprintf(stderr,"Błąd! Wynik jest nieprawidlowy!\n\n");
                             failflag=1;
                             break;
                         }
                     }
                     if(failflag==0)
                     {
-                        printf("Wynik jest poprawny!\n");
+                        printf("Wynik jest poprawny!\n\n");
                     }
                     freeMatrix(x);
                 }
